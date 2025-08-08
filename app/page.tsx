@@ -65,31 +65,31 @@ export default function Home() {
   const exportToCSV = (data: FormData) => {
     // Define CSV headers in Japanese
     const headers = [
-      "加盟店取引ID",
-      "加盟店取引受注日",
-      "企業名",
-      "部署名",
-      "担当者名",
-      "購入企業ID",
-      "郵便番号",
-      "住所",
-      "電話番号",
-      "メールアドレス",
-      "配送先企業名",
-      "配送先部署名",
-      "配送先担当者名",
-      "配送先担当者名（カナ）",
-      "配送先郵便番号",
-      "配送先住所",
-      "配送先電話番号",
-      "決済種別",
-      "FAX番号",
-      "リマインド種別",
-      "未使用項目",
-      "請求金額",
-      "商品名",
-      "商品価格",
-      "数量",
+      '加盟店取引ID',
+      '加盟店取引受注日',
+      '企業名',
+      '部署名',
+      '担当者名',
+      '購入企業ID',
+      '郵便番号',
+      '住所',
+      '電話番号',
+      'メールアドレス',
+      '配送先企業名',
+      '配送先部署名',
+      '配送先担当者名',
+      '配送先担当者名（カナ）',
+      '配送先郵便番号',
+      '配送先住所',
+      '配送先電話番号',
+      '決済方法',
+      'FAX番号',
+      '請求書送付方法',
+      '予備項目',
+      '取引金額',
+      '明細',
+      '単価',
+      '数量',
     ];
 
     // Generate multiple rows based on csvLineCount
@@ -177,9 +177,9 @@ export default function Home() {
         <Input
           label="加盟店取引ID (prefix)"
           placeholder="test_20250718_001"
-          {...register("shopTransactionId", {
-            required: "加盟店取引IDは必須です",
-            minLength: { value: 3, message: "最低3文字必要です" },
+          {...register('shopTransactionId', {
+            required: '加盟店取引IDは必須です',
+            minLength: { value: 3, message: '最低3文字必要です' },
           })}
           error={errors.shopTransactionId?.message}
         />
@@ -191,145 +191,145 @@ export default function Home() {
         <Input
           label="加盟店取引受注日"
           placeholder="2025/07/18"
-          {...register("shopOrderDate", {
-            required: "加盟店取引受注日は必須です",
+          {...register('shopOrderDate', {
+            required: '加盟店取引受注日は必須です',
           })}
           error={errors.shopOrderDate?.message}
         />
         <Input
           label="企業名"
           placeholder="株式会社テスト"
-          {...register("companyName")}
+          {...register('companyName')}
           error={errors.companyName?.message}
         />
         <Input
           label="部署名"
           placeholder="営業部"
-          {...register("department")}
+          {...register('department')}
           error={errors.department?.message}
         />
         <Input
           label="担当者名"
           placeholder="田中太郎"
-          {...register("customerName")}
+          {...register('customerName')}
           error={errors.customerName?.message}
         />
         <Input
           label="購入企業ID"
           placeholder="test_0001"
-          {...register("buyerId")}
+          {...register('buyerId')}
           error={errors.buyerId?.message}
         />
         <Input
           label="郵便番号"
           placeholder="100-0001"
-          {...register("zip")}
+          {...register('zip')}
           error={errors.zip?.message}
         />
         <Input
           label="住所"
           placeholder="東京都千代田区千代田1-1"
-          {...register("address")}
+          {...register('address')}
           error={errors.address?.message}
         />
         <Input
           label="電話番号"
           placeholder="03-1234-5678"
-          {...register("tel")}
+          {...register('tel')}
           error={errors.tel?.message}
         />
         <Input
           label="メールアドレス"
           placeholder="test@example.com"
           type="email"
-          {...register("email")}
+          {...register('email')}
           error={errors.email?.message}
         />
         <Input
           label="配送先企業名"
           placeholder="株式会社配送先"
-          {...register("deliveryCompanyName")}
+          {...register('deliveryCompanyName')}
           error={errors.deliveryCompanyName?.message}
         />
         <Input
           label="配送先部署名"
           placeholder="配送部"
-          {...register("deliveryDepartment")}
+          {...register('deliveryDepartment')}
           error={errors.deliveryDepartment?.message}
         />
         <Input
           label="配送先担当者名"
           placeholder="配送田中"
-          {...register("deliveryCustomerName")}
+          {...register('deliveryCustomerName')}
           error={errors.deliveryCustomerName?.message}
         />
         <Input
           label="配送先担当者名（カナ）"
           placeholder="ハイソウタナカ"
-          {...register("deliveryCustomerNameKana")}
+          {...register('deliveryCustomerNameKana')}
           error={errors.deliveryCustomerNameKana?.message}
         />
         <Input
           label="配送先郵便番号"
           placeholder="100-0001"
-          {...register("deliveryZip")}
+          {...register('deliveryZip')}
           error={errors.deliveryZip?.message}
         />
         <Input
           label="配送先住所"
           placeholder="東京都中央区日本橋1-1"
-          {...register("deliveryAddress")}
+          {...register('deliveryAddress')}
           error={errors.deliveryAddress?.message}
         />
         <Input
           label="配送先電話番号"
           placeholder="03-9876-5432"
-          {...register("deliveryTel")}
+          {...register('deliveryTel')}
           error={errors.deliveryTel?.message}
         />
         <Input
-          label="決済種別"
+          label="決済方法"
           placeholder="2"
-          {...register("settlementType")}
+          {...register('settlementType')}
           error={errors.settlementType?.message}
         />
         <Input
           label="FAX番号"
           placeholder="03-1234-5679"
-          {...register("fax")}
+          {...register('fax')}
           error={errors.fax?.message}
         />
         <Input
-          label="リマインド種別"
+          label="請求書送付方法"
           placeholder="メール"
-          {...register("remindType")}
+          {...register('remindType')}
           error={errors.remindType?.message}
         />
         <Input
-          label="任意項目"
+          label="予備項目"
           placeholder="その他の情報"
-          {...register("optionalField")}
+          {...register('optionalField')}
           error={errors.optionalField?.message}
         />
         <Input
-          label="請求金額"
+          label="取引金額"
           placeholder="10000"
           type="number"
-          {...register("billedAmount", {})}
+          {...register('billedAmount', {})}
           error={errors.billedAmount?.message}
         />
         <Input
-          label="商品名"
+          label="明細"
           placeholder="商品A"
-          {...register("goodsName")}
+          {...register('goodsName')}
           error={errors.goodsName?.message}
         />
         <Input
-          label="商品価格"
+          label="単価"
           placeholder="5000"
           type="number"
-          {...register("goodsPrice", {
-            min: { value: 0, message: "0円以上で入力してください" },
+          {...register('goodsPrice', {
+            min: { value: 0, message: '0円以上で入力してください' },
           })}
           error={errors.goodsPrice?.message}
         />
@@ -337,8 +337,8 @@ export default function Home() {
           label="数量"
           placeholder="2"
           type="number"
-          {...register("quantity", {
-            min: { value: 1, message: "1個以上で入力してください" },
+          {...register('quantity', {
+            min: { value: 1, message: '1個以上で入力してください' },
           })}
           error={errors.quantity?.message}
         />
@@ -357,7 +357,7 @@ export default function Home() {
               <input
                 type="number"
                 min="0"
-                max="1000"
+                max="3000"
                 value={csvLineCount}
                 onChange={(e) => setCsvLineCount(Number(e.target.value))}
                 className="w-40 px-3 py-1 border border-gray-300 rounded text-center"
@@ -366,7 +366,7 @@ export default function Home() {
             </div>
           </div>
           <p className="text-xs text-gray-500 mt-1">
-            生成するCSVファイルの行数を指定してください (1-1000行)
+            生成するCSVファイルの行数を指定してください (1-3000行)
           </p>
         </div>
 
@@ -456,25 +456,25 @@ export default function Home() {
                       配送先電話番号
                     </th>
                     <th className="border border-gray-300 px-3 py-2 text-left font-semibold text-xs whitespace-nowrap">
-                      決済種別
+                      決済方法
                     </th>
                     <th className="border border-gray-300 px-3 py-2 text-left font-semibold text-xs whitespace-nowrap">
                       FAX番号
                     </th>
                     <th className="border border-gray-300 px-3 py-2 text-left font-semibold text-xs whitespace-nowrap">
-                      リマインド種別
+                      請求書送付方法
                     </th>
                     <th className="border border-gray-300 px-3 py-2 text-left font-semibold text-xs whitespace-nowrap">
-                      未使用項目
+                      予備項目
                     </th>
                     <th className="border border-gray-300 px-3 py-2 text-left font-semibold text-xs whitespace-nowrap">
-                      請求金額
+                      取引金額
                     </th>
                     <th className="border border-gray-300 px-3 py-2 text-left font-semibold text-xs whitespace-nowrap">
-                      商品名
+                      明細
                     </th>
                     <th className="border border-gray-300 px-3 py-2 text-left font-semibold text-xs whitespace-nowrap">
-                      商品価格
+                      単価
                     </th>
                     <th className="border border-gray-300 px-3 py-2 text-left font-semibold text-xs whitespace-nowrap">
                       数量
@@ -486,12 +486,12 @@ export default function Home() {
                     const rowNumber = index + 1;
                     const incrementedId = `${
                       formData.shopTransactionId
-                    }_${String(rowNumber).padStart(4, "0")}`;
+                    }_${String(rowNumber).padStart(4, '0')}`;
 
                     return (
                       <tr
                         key={rowNumber}
-                        className={rowNumber % 2 === 0 ? "bg-gray-50" : ""}
+                        className={rowNumber % 2 === 0 ? 'bg-gray-50' : ''}
                       >
                         <td className="border border-gray-300 px-3 py-2 text-center font-medium text-xs">
                           {rowNumber}
